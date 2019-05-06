@@ -8,7 +8,10 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h2>Cat-egory</h2>
+        <div className="jumbotron jumbotron-fluid">
+          <h1>Cat-egory</h1> 
+          <p>Save and create lists of random cat images you like!</p>
+        </div>
         <CatLoader />
         <Categories />
         <CatList />
