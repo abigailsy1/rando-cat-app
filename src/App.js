@@ -3,7 +3,6 @@ import './App.css';
 import { CatLoader } from './CatLoader';
 import { Categories } from './Categories';
 import { CatList } from './CatList';
-import { CatInput } from './CatInput';
 
 class App extends Component {
   render() {
@@ -13,10 +12,14 @@ class App extends Component {
           <h1>Cat-egory</h1> 
           <p>Save and create lists of random cat images you like!</p>
         </div>
-        <CatLoader />
+        <div className="row">
+        <div className="col-md-8">
+         <CatLoader />
         <Categories />
         <CatList />
-        <CatInput />
+       
+        </div>
+       </div>
       </div>
     );
   }

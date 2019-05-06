@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 export class CatInput extends React.Component {
     state = {
@@ -23,12 +23,16 @@ export class CatInput extends React.Component {
     render() {
         return(
             <div>
-                <form className="input-group mb-3" onSubmit={this.submitForm}>
-                    <input className="form-control" type="text" onChange={this.state.handleOnChange} value={this.state.submitForm} placeholder="Create a cat-egory"/>
-                    <div className="input-group-append">
-                        <button className="btn btn-dark" type="submit">Save</button>
+                <div className="form-row">
+                    <div className="col-xs-4">
+                        <div className="input-group">
+                            <input className="form-control mb-3" placeholder="Create a cat-egory" type="text" onChange={this.state.handleOnChange} value={this.state.submitForm}/>
+                            <span className="input-group-btn">
+                                <button className="btn btn-dark" type="submit">Save</button>
+                            </span>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         )
     }
