@@ -1,9 +1,11 @@
 import React from 'react'
 import {fetchRandomCat} from './catApi'
+import { CatInput } from './CatInput';
 
 export class CatLoader extends React.Component {
   state = {
-    catImage: ""
+    catImage: "",
+    categories: []
   };
 
 //async might not work on browser, check babel preset env/plugin (install if necessary)
@@ -18,12 +20,22 @@ handleNextImage = async () => {
   const data = await fetchRandomCat();
   this.setState ({ catImage: data.file });
 }
+//creating lists
+newCategory = categoryInput => {
+  this.setState ({
+    categories: [categoryInput, ...this.state.categories]
+  });
+  console.log(this.state)
+}
 
   render() {
     return (
        <div>
-        <img src={this.state.catImage} alt="random-cat"/>
+         <div>
+            <img src={this.state.catImage} alt="random-cat"/>
         <button onClick={this.handleNextImage}>NEXT</button>
-      </div>
+         </div>
+         {/* <CatInput onSubmit={}/> */}
+       </div>
     )}
 }

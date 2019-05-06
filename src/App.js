@@ -3,6 +3,7 @@ import './App.css';
 import { CatLoader } from './CatLoader';
 import { Categories } from './Categories';
 import { CatList } from './CatList';
+import { CatInput } from './CatInput';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <CatLoader />
         <Categories />
         <CatList />
+        <CatInput />
       </div>
     );
   }
